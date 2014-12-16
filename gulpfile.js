@@ -9,11 +9,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     livereload = require('gulp-livereload'),
     sourcemaps = require('gulp-sourcemaps'),
-    source = require('vinyl-source-stream'),
-    buffer = require('vinyl-buffer'),
     protractor = require("gulp-protractor").protractor,
     karma = require('gulp-karma'),
-    del = require('del'),
     testFiles = 'unit_test/*.js',
     protTestFiles = 'e2e-tests/*.js',
     server = require('./server.js'),
@@ -136,7 +133,7 @@ gulp.task('server', function () {
 });
 
 /*default*/
-gulp.task('init', [
+gulp.task('default', [
   'server',
   'fonts',
   'scripts',
@@ -144,4 +141,5 @@ gulp.task('init', [
   'less',
   'ngTemplate',
   'ngDependencies',
+  'watch'
   ]);

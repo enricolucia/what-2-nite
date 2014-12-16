@@ -16,7 +16,7 @@ $ bower install
 ```
 Install npm and bower dependencies
 ```sh
-$ gulp init
+$ gulp
 ```
 Starts the express server, plus creating the main 'app' folder where to serve all contents and watch changes
 ```sh
@@ -46,6 +46,7 @@ What-2-Nite use the following tools and libraries:
 * Bower
 * Node Express
 * Selenium
+* PhantomJS
 
 ### Compatibilities
 
