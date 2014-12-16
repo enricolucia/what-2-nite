@@ -1,0 +1,88 @@
+<!-- video overlay -->
+<div class="video-container" ng-if="videoVisible" ng-click="showVideo()">
+<!-- 16:9 aspect ratio -->
+  <span class="glyphicon glyphicon-remove-circle"></span>
+  <div class="jumbtron trailer">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" ng-src="{{videoUrl | trusted}}"></iframe>
+    </div>
+  </div>
+</div>
+<!-- movie page content -->
+<div class="jumbotron movie bg-white">
+  <ol id="crumb" class="breadcrumb col-md-12">
+    <li><a href="/">Home</a></li>
+    <li><a href="/">Movies</a></li>
+    <li class="active">{{title}}</li>
+  </ol>
+  <div class="poster" load-item="{{backdrop_path}}" type-url="{{backgroundUrl}}" animation="row">
+    <div class="container movie-play">
+      <span class="glyphicon glyphicon-play center-block text-primary" aria-hidden="true" ng-click="showVideo()" ></span>
+    </div>
+  </div>
+  <div class="bg-white">
+    <div class="container content">
+      <div class="col-md-12">
+      <!-- main section -->
+        <div class="col-md-2 bs-callout text-right">
+          <div class="movie-item text-muted">
+            <div class="poster-img" ng-hide="noImage" load-item="{{poster_path}}" type-url="{{thumbnailUrl}}"></div>
+            <h5 class='breakword'><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{runtime}} min.</h5>
+            <h5 class='breakword'><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{release_date | date}}</h5>
+            <h5><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> {{vote_average}} on {{vote_count}} </h5>
+            <h5><a href="" ng-if="trailerLink" ng-click="showVideo()">Watch Trailer</a></h5>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <h2>{{title}}</h2>
+          <h4 class="text-primary">{{tagline}}</h4>
+          <p class="lead">{{overview}}</p>
+        </div>
+
+        <div class="col-md-2">
+          <dl>
+            <dt>Genre</dt>
+            <dd>
+              <span class="badge" ng-repeat="genre in genres">{{genre.name}}</span>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Production</dt>
+            <dd>
+              <ul class="list-unstyled">
+                <li ng-repeat="production in production_companies">{{production.name}}</li>
+              </ul>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Countries</dt>
+            <dd>
+              <ul class="list-unstyled">
+                <li ng-repeat="production in production_countries">{{production.name}}</li>
+              </ul>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Website</dt>
+            <dd>
+              <a href="{{homepage}}" target="_blank">{{homepage}}</a>
+            </dd>
+          </dl>
+          <dl>
+            <dt>IMDB</dt>
+            <dd>
+              <a href="http://www.imdb.com/title/{{imdb_id}}" target="_blank">http://www.imdb.com/title/{{imdb_id}}</a>
+            </dd>
+          </dl>
+          <dl>
+            <dt>Censored</dt>
+            <dd>
+              <span>{{adult}}</span>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
