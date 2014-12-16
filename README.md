@@ -1,4 +1,5 @@
 # What-2-Nite
+[![Build Status](https://travis-ci.org/enricolucia/what-2-nite.svg)](https://travis-ci.org/enricolucia/what-2-nite)
 
 A simple page application with restful API from [themoviedb.org] and AngularJs.
 It lets you search and browse for your favourite movies based on your preferences, provindig tips for best movies to watch as well.
