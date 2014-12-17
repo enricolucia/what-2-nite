@@ -4,7 +4,6 @@
 A simple page application with restful API from [themoviedb.org] and AngularJs.
 It lets you search and browse for your favourite movies based on your preferences, provindig tips for best movies to watch as well.
 
-
 ### Structure
   - Gulp task management implemented for build, watch and test tasks (e2e, unit-test)
   - Bower integration
