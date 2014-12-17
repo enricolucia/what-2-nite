@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     testFiles = 'unit_test/*.js',
     protTestFiles = 'e2e-tests/*.js',
     server = require('./server.js'),
+    env = '',
     port = 8000,
     reloadPort = 35729,
     ngDependencies = [
@@ -26,7 +27,7 @@ var gulp = require('gulp'),
 
 /*less task*/
 gulp.task('less', function() {
-  return gulp.src([
+  var stream = gulp.src([
     'src/less/bootstrap/bootstrap.less',
     'src/less/bootstrap/theme.less',
     'src/less/app.less',
@@ -38,11 +39,14 @@ gulp.task('less', function() {
   .pipe(gulp.dest('app/styles'))
   .pipe(rename({suffix: '.min'}))
   .pipe(minifycss())
-  .pipe(gulp.dest('app/styles'))
-  .pipe(livereload(reloadPort))
-  .on('error', function (err) {
-    throw err;
-  });
+  .pipe(gulp.dest('app/styles'));
+  if (env === 'dev') {
+    return stream.pipe(livereload(reloadPort))
+    .on('error', function (err) {
+      throw err;
+    });
+  }
+  return stream;
 });
 
 /*protractor test task*/
@@ -72,7 +76,7 @@ gulp.task('test', function() {
 
 /*scripts task*/
 gulp.task('scripts', function() {
-  return gulp.src('src/scripts/**/*.js')
+  var stream =  gulp.src('src/scripts/**/*.js')
   // sourcemap added
   .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
@@ -82,22 +86,40 @@ gulp.task('scripts', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('app/scripts'))
-  .pipe(livereload(reloadPort));
+  .pipe(gulp.dest('app/scripts'));
+  if (env === 'dev') {
+    return stream.pipe(livereload(reloadPort))
+    .on('error', function (err) {
+      throw err;
+    });
+  }
+  return stream;
 });
 
 /*html task*/
 gulp.task('html', function(){
-  return gulp.src('src/*.html')
-  .pipe(gulp.dest('app/'))
-  .pipe(livereload(reloadPort));
+  var stream = gulp.src('src/*.html')
+  .pipe(gulp.dest('app/'));
+  if (env === 'dev') {
+    return stream.pipe(livereload(reloadPort))
+    .on('error', function (err) {
+      throw err;
+    });
+  }
+  return stream;
 });
 
 /*ng template task*/
 gulp.task('ngTemplate', function(){
-  return gulp.src('src/views/**/*.html')
-  .pipe(gulp.dest('app/views/'))
-  .pipe(livereload(reloadPort));
+  var stream =  gulp.src('src/views/**/*.html')
+  .pipe(gulp.dest('app/views/'));
+  if (env === 'dev') {
+    return stream.pipe(livereload(reloadPort))
+    .on('error', function (err) {
+      throw err;
+    });
+  }
+  return stream;
 });
 
 /*ngDependencies*/
@@ -126,14 +148,25 @@ gulp.task('fonts', function () {
   .pipe(gulp.dest('app/fonts/'));
 });
 
+gulp.task('dev', function () {
+  env = 'dev';
+  return;
+});
+
+gulp.task('pro', function () {
+  env = 'pro';
+  return;
+});
+
 /*server task*/
 gulp.task('server', function () {
   server.listen(port);
-  // console.log('server started... on port ', port);
+  console.log('>>>',' Server started... on localost:', port, ' <<<');
 });
 
 /*default*/
 gulp.task('default', [
+  'dev',
   'server',
   'fonts',
   'scripts',
@@ -143,3 +176,16 @@ gulp.task('default', [
   'ngDependencies',
   'watch'
   ]);
+
+/*production*/
+gulp.task('production', [
+  'pro',
+  'fonts',
+  'scripts',
+  'html',
+  'less',
+  'ngTemplate',
+  'ngDependencies',
+  ], function (){
+    return;
+  });

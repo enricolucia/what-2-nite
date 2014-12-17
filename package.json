@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "what-2-nite",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "what-2-nite",
+  "repository": "https://github.com/enricolucia/what-2-nite",
   "license": "MIT",
   "devDependencies": {
     "body-parser": "^1.10.0",
@@ -30,6 +30,10 @@
     "phantomjs": "^1.9.12",
     "protractor": "^1.1.1",
     "selenium-server-standalone-jar": "^2.44.0"
+  },
+  "subdomain": "what-2-nite",
+  "engines": {
+    "node": "0.10.x"
   },
   "scripts": {
     "prestart": "npm install",
