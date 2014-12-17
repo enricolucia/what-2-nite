@@ -17,7 +17,7 @@
     <input type="text" class="form-control" id="inputSearch" search autocomplete="off">
     <ul id="results" tabindex="0" class="dropdown-menu" suggestions assign-focus="#inputSearch" ng-show="research">
       <li tabindex="{{$index + 1}}" ng-repeat="result in research">
-        <a href="/app/movie/{{result.id}}">{{result.title}}</a>
+        <a href="/movie/{{result.id}}">{{result.title}}</a>
       </li>
     </ul>
     </div>

@@ -13,7 +13,6 @@ It lets you search and browse for your favourite movies based on your preference
 ### Configure
 ```sh
 $ npm install
-$ bower install
 ```
 Install npm and bower dependencies
 ```sh
