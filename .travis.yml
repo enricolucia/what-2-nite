@@ -5,12 +5,13 @@ node_js:
 before_install:
 - npm install karma karma-cli bower -g
 before_deploy:
+- npm install bower
 - gulp production
 deploy:
   provider: nodejitsu
   user: enricorock
   skip_cleanup: true
   api_key:
-    secure: HBizpIA2huguIE0E829EFvpKXn+xYcDrrq2WC1QESTGibZCm2+VHsg0v3ZFaQpkyleHkNzVMDtmupOwWOxfS0d/pCr+dfuASWEvedPFf7SQS2XzM2PhSGKnvlJaE5YEDJSdz4VYjSW91oLvvK4e5HlNWe+r3LzJsLQO5f/cVa3Q=
+    secure: Bq7KrmjCLXA9KK5hdewtd3tckpbCvQFFnZZv5gggqu2Iq+74zfdIUDTqZbtOMGDJzFXlJ32xXTcdU+YMo1amG0Q+KKfm5vHdxwJbpP/O3xru8y5CwcUaKFZxi3pu/KsCb2zEbqrTG3tGw9/+d4RH+gW8lf9cM//9tiMFRpBB0HM=
   on:
     repo: enricolucia/what-2-nite
