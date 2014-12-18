@@ -1,7 +1,7 @@
 {
   "name": "what-2-nite",
   "private": true,
-  "version": "0.0.0-1",
+  "version": "0.0.3",
   "description": "what-2-nite",
   "repository": "https://github.com/enricolucia/what-2-nite",
   "license": "MIT",
@@ -38,7 +38,7 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "postinstall": "bower install -F",
+    "postinstall": "bower install -F && gulp production",
     "start": "node bin/www",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",

@@ -1,4 +1,6 @@
 /*global require*/
+/*global process*/
 var app = require('../server.js');
 
+// heroku assign random port
 app.listen(process.env.PORT || 8000);
