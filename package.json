@@ -5,10 +5,9 @@
   "description": "what-2-nite",
   "repository": "https://github.com/enricolucia/what-2-nite",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "body-parser": "^1.10.0",
     "bower": "^1.3.1",
-    "chromedriver": "^2.12.0",
     "express": "^4.10.5",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
@@ -24,6 +23,9 @@
     "gulp-sourcemaps": "^1.2.8",
     "gulp-uglify": "^1.0.2",
     "jshint-stylish": "^1.0.0",
+  },
+  "devDependencies": {
+    "chromedriver": "^2.12.0",
     "karma": "~0.10",
     "karma-junit-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^0.1.4",
@@ -31,7 +33,6 @@
     "protractor": "^1.1.1",
     "selenium-server-standalone-jar": "^2.44.0"
   },
-  "subdomain": "what-2-nite",
   "engines": {
     "node": "0.10.x"
   },
