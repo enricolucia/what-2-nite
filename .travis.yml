@@ -3,9 +3,6 @@ node_js:
 - '0.10'
 before_install:
 - npm install karma karma-cli bower -g
-before_deploy:
-- npm install bower
-- gulp production
 deploy:
   provider: heroku
   api_key:

@@ -39,6 +39,7 @@
   "scripts": {
     "prestart": "npm install",
     "postinstall": "bower install -F",
+    "build": "gulp production",
     "start": "node bin/www",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
