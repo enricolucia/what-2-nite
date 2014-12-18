@@ -177,7 +177,7 @@ gulp.task('default', [
   ]);
 
 /*production*/
-gulp.task('production', [
+gulp.task('heroku:production', [
   'pro',
   'fonts',
   'scripts',
