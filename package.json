@@ -22,7 +22,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-sourcemaps": "^1.2.8",
     "gulp-uglify": "^1.0.2",
-    "jshint-stylish": "^1.0.0",
+    "jshint-stylish": "^1.0.0"
   },
   "devDependencies": {
     "chromedriver": "^2.12.0",
