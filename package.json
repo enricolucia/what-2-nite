@@ -40,7 +40,6 @@
     "prestart": "npm install",
     "postinstall": "bower install -F && gulp heroku:production",
     "start": "node bin/www",
-    "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run"
   }

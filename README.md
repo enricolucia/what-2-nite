@@ -5,6 +5,7 @@
 A single page application with restful API from [themoviedb.org] and AngularJs.
 It lets you search and browse for your favourite movies based on your preferences, provindig tips for best movies to watch as well.
 
+Live on heroku here: [what-2-nite.herokuapp.com]
 ### Structure
   - Gulp task management implemented for build, watch and test tasks (e2e, unit-test)
   - Bower integration
@@ -70,6 +71,7 @@ MIT
 
 
 **Free Software, Hell Yeah!**
+[what-2-nite.herokuapp.com]:http://what-2-nite.herokuapp.com/
 [themoviedb.org]:http://themoviedb.org/
 [ngRoute]:https://docs.angularjs.org/api/ngRoute
 [ngAnimate]:https://docs.angularjs.org/api/ngAnimate
