@@ -19,8 +19,10 @@ function ($scope, api, $routeParams, $rootScope, config) {
   $scope.backgroundUrl = config.backgroundUrl;
   $scope.thumbnailUrl = config.thumbnailUrl;
   api.movie({ act2 : $routeParams.id, language : $rootScope.language }, function (data) {
-    for (var i in data) {
-        $scope[i] = data[i];
+      for (var i in data) {
+        if (data[i]) {
+          $scope[i] = data[i];
+        }
     }
 
     if (!$scope.overview) {
