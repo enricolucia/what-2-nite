@@ -37,9 +37,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "prestart": "npm install",
-    "postinstall": "bower install -F",
-    "build": "gulp production",
+    "prestart": "npm install && bower install -F && gulp production",
     "start": "node bin/www",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
