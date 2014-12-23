@@ -35,6 +35,7 @@ Starts protractor testings
  - e2e testings
  - unit testings
  - enhance mobile view
+ - improve modules
 
 Any suggestions or bug reports is more than welcome!
 
