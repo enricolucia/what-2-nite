@@ -27,7 +27,7 @@ myApp.run(['$rootScope', '$window', function ($rootScope, $window) {
     $window.localStorage.setItem('language', language);
   });
 
-  $rootScope.$watch('screenSize', function (val, old, scope) {
+  $rootScope.$watch('screenSize', function (val, oldval, scope) {
     switch (val) {
       case 'visible-md':
         scope.screen = 'md';
