@@ -10,6 +10,8 @@ Live on heroku here: [what-2-nite.herokuapp.com]
   - Gulp task management implemented for build, watch and test tasks (e2e, unit-test)
   - Bower integration
   - Karma and Protractor implemented
+  - Continuos Integration with Travis
+  - Continuos Deployment with Heroku
 
 ### Configure
 ```sh
@@ -33,6 +35,7 @@ Starts protractor testings
  - e2e testings
  - unit testings
  - enhance mobile view
+ - improve modules
 
 Any suggestions or bug reports is more than welcome!
 
