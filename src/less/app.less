@@ -425,10 +425,32 @@ form {
   }
   .movie {
     &.thumbnail {
-      width: 29.5% !important;
-      margin: 1.8%;
-      p {
-        font-size: 10px;
+        width: 96.4% !important;
+        height: auto !important;
+        margin: 1.8%;
+      a {
+        display: block;
+        text-decoration: none;
+        p {
+          font-size: 10px;
+        }
+        .mobile-caption-movie {
+          margin: 0;
+          padding: 0;
+          .mobile-thumbnail {
+            width: 75px;
+            height: 115.5px;
+            float: left;
+            margin-right: 1.8%;
+            background-size: cover;
+          }
+          .mobile-desc {
+            height: 100%;
+            h5 {
+              margin-top: 0;
+            }
+          }
+        }
       }
     }
   }
@@ -466,5 +488,14 @@ form {
       }
     }
   }
-
+  .jumbotron {
+    h2 {
+      clear: both;
+    }
+    h5 {
+      font-size: 9px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
 }

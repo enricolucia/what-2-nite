@@ -26,4 +26,21 @@ myApp.run(['$rootScope', '$window', function ($rootScope, $window) {
     $rootScope.language = language;
     $window.localStorage.setItem('language', language);
   });
+
+  $rootScope.$watch('screenSize', function (val, old, scope) {
+    switch (val) {
+      case 'visible-md':
+        scope.screen = 'md';
+        break;
+      case 'visible-lg':
+        scope.screen = 'lg';
+        break;
+      case 'visible-xs':
+        scope.screen = 'xs';
+        break;
+      case 'visible-sm':
+        scope.screen = 'sm';
+        break;
+    }
+  });
 }]);

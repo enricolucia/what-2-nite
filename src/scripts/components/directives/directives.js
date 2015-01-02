@@ -121,3 +121,36 @@ myApp.directive('loadItem', ['$q', 'config',
     }
   };
 }]);
+
+myApp.directive('displayMode', ['$window', '$timeout', function ($window, $timeout) {
+  return {
+    restrict: 'A',
+    scope: {
+      displayMode: '='
+    },
+    template: '<div class="visible-xs"></div><div class="visible-sm"></div>' +
+    '<div class="visible-md"></div><div class="visible-lg"></div>',
+    link: function (scope, iElement) {
+      scope.markers = iElement.find('div');
+      var t;
+
+      scope.updateDisplayMode = function () {
+        angular.forEach(this.markers, function (elem) {
+          if (elem.offsetParent !== null) {
+            this.displayMode = elem.className;
+          }
+        }.bind(this));
+      }.bind(scope);
+
+      angular.element($window).bind('resize', function () {
+        $timeout.cancel(t);
+        t = $timeout(function () {
+          this.updateDisplayMode();
+          this.$apply(this.displayMode);
+        }.bind(this), 300);
+      }.bind(scope));
+
+      scope.updateDisplayMode();
+    }
+  };
+}])

@@ -22,10 +22,11 @@ main.controller('MainController', [
   function ($scope, api, Paginator, $http, $rootScope, config) {
     var keepDate = $scope.years = new Date().getFullYear();
     $scope.thumbnailUrl = config.thumbnailUrl;
+    $scope.mobileThumbnailUrl = config.mobileThumbnailUrl;
     $scope.research = [];
     $scope.with_genres = [];
-    $scope.language = $rootScope.language;
     var i;
+
 
     api.movieList(function (data) {
       $scope.genres = data.genres;

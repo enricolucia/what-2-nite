@@ -13,7 +13,7 @@
   <ol id="crumb" class="breadcrumb col-md-12">
     <li><a href="/">Home</a></li>
     <li><a href="/">Movies</a></li>
-    <li class="active">{{title}}</li>
+    <li ng-if="screen === 'md' || screen === 'lg'" class="active">{{title}}</li>
   </ol>
   <div class="poster" load-item="{{backdrop_path}}" type-url="{{backgroundUrl}}" animation="row">
     <div class="container movie-play">

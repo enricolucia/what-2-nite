@@ -59,7 +59,7 @@
         <h5>no results found!</h5>
       </div>
     </div>
-    <div class="movie thumbnail" ng-repeat="movie in topMovies">
+    <div class="movie thumbnail" ng-repeat="movie in topMovies" ng-if="screen === 'md' || screen === 'lg'">
         <div class="back-thumbnail" load-item="{{movie.poster_path}}" type-url="{{thumbnailUrl}}"></div>
         <h6 ng-if="noImage"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></h6>
         <a href="/movie/{{movie.id}}">
@@ -67,6 +67,19 @@
             <h5 class="text-primary">{{movie.title}}</h5>
             <p class='breakword'><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> {{movie.vote_average}}
             <br><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{movie.release_date | date}}</p>
+          </div>
+        </a>
+    </div>
+    <div class="movie thumbnail mobile" ng-repeat="movie in topMovies"  ng-if="screen === 'sm' || screen === 'xs'">
+        <a href="/movie/{{movie.id}}">
+          <div class="mobile-caption-movie caption">
+            <div ng-show="!noImage" class="mobile-thumbnail" load-item="{{movie.poster_path}}" type-url="{{thumbnailUrl}}"></div>
+            <div class="mobile-desc">
+              <h5 class="text-primary">{{movie.title}}</h5>
+              <p>Censored: {{movie.adult || 'false'}}</p>
+              <p class='breakword'><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> imdb: {{movie.vote_average}}, votes: {{movie.vote_count}}
+              <br><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> date: {{movie.release_date | date}}</p>
+            </div>
           </div>
         </a>
     </div>
