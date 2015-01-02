@@ -1,7 +1,7 @@
 /*global angular*/
 // app
 "use strict";
-// Declare app level module which depends on views, and components
+// Declare app level module which depends on views, components and rest
 var myApp = angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
