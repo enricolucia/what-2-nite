@@ -153,4 +153,4 @@ myApp.directive('displayMode', ['$window', '$timeout', function ($window, $timeo
       scope.updateDisplayMode();
     }
   };
-}])
+}]);
