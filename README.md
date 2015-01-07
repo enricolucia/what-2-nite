@@ -1,4 +1,6 @@
 # What-2-Nite
+![alt tag](logo.jpg)
+
 [![Build Status](https://travis-ci.org/enricolucia/what-2-nite.svg)](https://travis-ci.org/enricolucia/what-2-nite)
 [![Code Climate](https://codeclimate.com/github/enricolucia/what-2-nite/badges/gpa.svg)](https://codeclimate.com/github/enricolucia/what-2-nite)
 
