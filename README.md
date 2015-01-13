@@ -38,6 +38,7 @@ Starts protractor testings
  - unit testings
  - enhance mobile view
  - improve modules
+ - add related movies to movie page
 
 Any suggestions or bug reports is more than welcome!
 
