@@ -135,20 +135,20 @@ myApp.directive('displayMode', ['$window', '$timeout', function ($window, $timeo
       var t;
 
       scope.updateDisplayMode = function () {
-        angular.forEach(this.markers, function (elem) {
+        angular.forEach(scope.markers, function (elem) {
           if (elem.offsetParent !== null) {
-            this.displayMode = elem.className;
+            scope.displayMode = elem.className;
           }
-        }.bind(this));
-      }.bind(scope);
+        });
+      };
 
       angular.element($window).bind('resize', function () {
         $timeout.cancel(t);
         t = $timeout(function () {
-          this.updateDisplayMode();
-          this.$apply(this.displayMode);
-        }.bind(this), 300);
-      }.bind(scope));
+          scope.updateDisplayMode();
+          scope.$apply(scope.displayMode);
+        }, 300);
+      });
 
       scope.updateDisplayMode();
     }
