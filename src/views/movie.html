@@ -8,7 +8,7 @@
     </div>
   </div>
 </div>
-<!-- movie page content -->
+<!-- relMovie page content -->
 <div class="jumbotron movie bg-white">
   <ol id="crumb" class="breadcrumb col-md-12">
     <li><a href="/">Home</a></li>
@@ -24,7 +24,7 @@
     <div class="container content">
       <div class="col-md-12">
       <!-- main section -->
-        <div class="col-md-2 bs-callout text-right">
+        <div class="col-md-2 text-right">
           <div class="movie-item text-muted">
             <div class="poster-img" ng-hide="noImage" load-item="{{poster_path}}" type-url="{{thumbnailUrl}}"></div>
             <h5 class='breakword'><span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{runtime}} min.</h5>
@@ -38,6 +38,21 @@
           <h2>{{title}}</h2>
           <h4 class="text-primary">{{tagline}}</h4>
           <p class="lead">{{overview}}</p>
+          <div ng-if="relatedMovies" class="padBottom">
+            <h5>Related movies</h5>
+            <div class="movie mobile">
+                <a href="/movie/{{relMovie.id}}" ng-repeat="relMovie in relatedMovies">
+                    <span class="badge">{{relMovie.title}}</span>
+                </a>
+            </div>
+          </div>
+          <div ng-if="reviewsMovie" class="reviews padBottom">
+            <h5>Reviews</h5>
+            <div ng-repeat="review in reviewsMovie">
+              <small class="text-muted">{{review.content}}</small>
+              <h6><a ng-href="{{review.url}}" target="_blank">{{review.author}}</a></h6>
+            </div>
+          </div>
         </div>
 
         <div class="col-md-2">

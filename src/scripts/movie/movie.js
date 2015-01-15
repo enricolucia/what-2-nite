@@ -42,6 +42,18 @@ function ($scope, api, $routeParams, $rootScope, config) {
     }
   });
 
+  api.movieSimilar({ act2: $routeParams.id, language: $rootScope.language}, function (relList) {
+    if (relList.results.length) {
+      $scope.relatedMovies = relList.results;
+    }
+  });
+
+  api.movieReviews({ act2: $routeParams.id, language: $rootScope.language}, function (reviewsList) {
+    if (reviewsList.results.length) {
+      $scope.reviewsMovie = reviewsList.results;
+    }
+  });
+
   $scope.videoVisible = false;
 
   $scope.showVideo = function () {

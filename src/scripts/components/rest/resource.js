@@ -33,6 +33,20 @@ function ($resource, config) {
         act1 : 'movie'
       }
     },
+    movieSimilar : {
+      method : 'GET',
+      params : {
+        act1 : 'movie',
+        act3 : 'similar'
+      }
+    },
+    movieReviews : {
+      method : 'GET',
+      params : {
+        act1 : 'movie',
+        act3 : 'reviews'
+      }
+    },
     movieVideos : {
       method : 'GET',
       params : {
