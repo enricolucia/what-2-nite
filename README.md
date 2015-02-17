@@ -1,4 +1,6 @@
 # What-2-Nite
+
+[![Join the chat at https://gitter.im/enricolucia/what-2-nite](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/enricolucia/what-2-nite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![alt tag](logo.jpg)
 
 [![Build Status](https://travis-ci.org/enricolucia/what-2-nite.svg)](https://travis-ci.org/enricolucia/what-2-nite)
