@@ -42,6 +42,9 @@ main.controller('MainController', [
 
     $http.get('/isoLangs.json').success(function (json) {
       $scope.countries = json;
+    }).error(function () {
+      // TODO serve json locally
+      $scope.countries = [];
     });
 
     $scope.search = function (num, genreId, event, year, target) {
