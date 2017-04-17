@@ -1,10 +1,11 @@
 {
   "name": "what-2-nite",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "what-2-nite",
   "repository": "https://github.com/enricolucia/what-2-nite",
   "license": "MIT",
+  "main": "main.js",
   "dependencies": {
     "ejs": "^2.0.8",
     "body-parser": "^1.10.0",
@@ -27,6 +28,9 @@
   },
   "devDependencies": {
     "chromedriver": "^2.12.0",
+    "electron-prebuilt": "^0.34.0",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-ng-html2js": "^0.2.0",
     "karma": "~0.10",
     "karma-junit-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^0.1.4",

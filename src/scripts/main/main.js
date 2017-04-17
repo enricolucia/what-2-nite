@@ -42,6 +42,8 @@ main.controller('MainController', [
 
     $http.get('/isoLangs.json').success(function (json) {
       $scope.countries = json;
+    }).error(function () {
+      $scope.countries = require(__dirname + '/../isoLangs.json');// jshint ignore:line
     });
 
     $scope.search = function (num, genreId, event, year, target) {

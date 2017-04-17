@@ -9,6 +9,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     livereload = require('gulp-livereload'),
     sourcemaps = require('gulp-sourcemaps'),
+    ngHtml2Js = require("gulp-ng-html2js"),
+    minifyHtml = require("gulp-minify-html"),
     protractor = require("gulp-protractor").protractor,
     karma = require('gulp-karma'),
     testFiles = 'unit_test/*.js',
@@ -46,6 +48,23 @@ gulp.task('less', function() {
     });
   }
   return stream;
+});
+
+/*templateCache*/
+gulp.task('templateCache', function () {
+  gulp.src("src/views/*.html")
+      .pipe(minifyHtml({
+          empty: true,
+          spare: true,
+          quotes: true
+      }))
+      .pipe(ngHtml2Js({
+          moduleName: "myApp",
+          prefix: "/views/"
+      }))
+      .pipe(concat("view.min.js"))
+      .pipe(uglify())
+      .pipe(gulp.dest("app/views"));
 });
 
 /*protractor test task*/
@@ -180,6 +199,20 @@ gulp.task('default', [
 gulp.task('heroku:production', [
   'pro',
   'fonts',
+  'scripts',
+  'html',
+  'less',
+  'ngTemplate',
+  'ngDependencies',
+  ], function (){
+    return;
+  });
+
+/*electron production*/
+gulp.task('electron:production', [
+  'pro',
+  'fonts',
+  'templateCache',
   'scripts',
   'html',
   'less',
